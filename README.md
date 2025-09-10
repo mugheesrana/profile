@@ -1,6 +1,6 @@
 # Muhammad Mughees - Senior Laravel Developer Portfolio
 
-[![Live Portfolio](https://img.shields.io/badge/Live%20Portfolio-Visit%20Now-00d4ff?style=for-the-badge&logo=github)](https://mugheesai.github.io/profile/)
+[![Live Portfolio](https://img.shields.io/badge/Live%20Portfolio-Visit%20Now-00d4ff?style=for-the-badge&logo=github)](https://Mugheesrana.github.io/profile/)
 [![Laravel](https://img.shields.io/badge/Laravel-Expert-ff6b6b?style=flat-square&logo=laravel)](https://laravel.com)
 [![PHP](https://img.shields.io/badge/PHP-Advanced-777bb4?style=flat-square&logo=php)](https://php.net)
 [![Vue.js](https://img.shields.io/badge/Vue.js-Advanced-4fc08d?style=flat-square&logo=vue.js)](https://vuejs.org)
@@ -73,7 +73,7 @@ Passionate **Senior Laravel Developer** with 5+ years of experience in building 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/MugheesAI/profile.git
+   git clone https://github.com/Mugheesrana/profile.git
    cd profile
    ```
 
@@ -86,7 +86,7 @@ Passionate **Senior Laravel Developer** with 5+ years of experience in building 
    ```
 
 3. **Live Demo**
-   Visit: [https://mugheesai.github.io/profile/](https://mugheesai.github.io/profile/)
+   Visit: [https://Mugheesrana.github.io/profile/](https://Mugheesrana.github.io/profile/)
 
 ## 📱 Features
 
