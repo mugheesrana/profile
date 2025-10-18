@@ -355,7 +355,6 @@ class PortfolioManager {
     initCounterAnimation() {
         const counters = document.querySelectorAll('.stat-number');
         counters.forEach(counter => {
-            // counter.textContent = '0+';
         });
     }
 
