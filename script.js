@@ -536,6 +536,7 @@ class PortfolioManager {
 }
 
 const projectsData = [
+
     
     {
         id: 'altair1',
