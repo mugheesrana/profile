@@ -1,4 +1,4 @@
-# Muhammad Mughees - Senior Laravel Developer Portfolio
+# Muhammad Mughees - Laravel Developer Portfolio
 
 [![Live Portfolio](https://img.shields.io/badge/Live%20Portfolio-Visit%20Now-00d4ff?style=for-the-badge&logo=github)](https://Mugheesrana.github.io/profile/)
 [![Laravel](https://img.shields.io/badge/Laravel-Expert-ff6b6b?style=flat-square&logo=laravel)](https://laravel.com)
@@ -7,15 +7,15 @@
 
 ## 🚀 About Me
 
-Passionate **Senior Laravel Developer** with 5+ years of experience in building scalable web applications, payment integrations, and modern digital solutions. Specialized in full-stack development with expertise in Laravel, PHP, Vue.js, and various modern technologies.
+Laravel-focused web developer with **2+ years** of experience building business websites, admin panels, and payment integrations using Laravel, PHP, and MySQL. I enjoy working on practical solutions that solve real problems for clients.
 
 ## ✨ Key Highlights
 
-- 🏆 **50+ Projects** successfully delivered
-- 👥 **40+ Happy Clients** worldwide
-- 💼 **5+ Years** of professional development experience
-- 🔧 **Payment Integration Expert** (Stripe, PayPal, Razorpay, Square)
-- 🌐 **Full-Stack Developer** (Laravel, Vue.js, React, Node.js)
+- 🏗️ Experience delivering multiple Laravel-based projects
+- 🤝 Experience working with local and remote clients
+- 💼 **2+ Years** of hands-on web development experience
+- 🔧 Strong focus on payment integration (Stripe, PayPal, etc.)
+- 🌐 Comfortable with both backend and basic frontend work (Blade, Vue.js)
 
 ## 🛠️ Tech Stack
 
@@ -111,7 +111,8 @@ Passionate **Senior Laravel Developer** with 5+ years of experience in building 
 
 - 📧 **Email**: [mugheesxana@gmail.com](mailto:mugheesxana@gmail.com)
 - 📱 **Phone/WhatsApp**: [+92 306 630 1081](tel:+923066301081)
-- 🔗 **Fiverr**: [Visit My Profile](https://www.fiverr.com/mugheesxana)
+- 🔗 **LinkedIn / Portfolio**: [mugheesrana.github.io/profile](https://mugheesrana.github.io/profile/)
+- 🧑‍💻 **Fiverr**: [Visit My Fiverr Gig](https://www.fiverr.com/s/YR568jK)
 - 📍 **Location**: Lahore, Pakistan
 - 💼 **Status**: Available for new opportunities
 
@@ -140,6 +141,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/923066301081)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mugheesxana@gmail.com)
-[![Fiverr](https://img.shields.io/badge/Fiverr-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://www.fiverr.com/mugheesxana)
+[![Fiverr](https://img.shields.io/badge/Fiverr-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://www.fiverr.com/s/YR568jK)
 
 </div>

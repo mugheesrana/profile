@@ -44,12 +44,11 @@ I hope this email finds you well! I'm excited to share my professional portfolio
 🌟 VIEW MY PORTFOLIO: https://mugheesai.github.io/profile/
 
 Here's what you'll find:
-✅ 50+ successfully completed projects
-✅ 5+ years of Laravel expertise
+✅ Real Laravel projects built for business use-cases
+✅ 2+ years of Laravel-focused development experience
 ✅ Payment integration specialization
-✅ Full-stack development capabilities
+✅ Backend-focused development with Laravel and PHP
 ✅ Interactive project galleries
-✅ Client testimonials and case studies
 
 Key Features:
 🎨 Modern, responsive design
@@ -64,7 +63,7 @@ Best regards,
 Muhammad Mughees
 📧 mugheesxana@gmail.com
 📱 +92 306 630 1081
-🌐 https://www.fiverr.com/mugheesxana
+🌐 https://www.fiverr.com/s/YR568jK
 ```
 
 ---

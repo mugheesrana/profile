@@ -62,7 +62,9 @@ class PortfolioManager {
         });
 
         // Contact form
-        this.contactForm.addEventListener('submit', (e) => this.handleContactForm(e));
+        if (this.contactForm) {
+            this.contactForm.addEventListener('submit', (e) => this.handleContactForm(e));
+        }
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -248,7 +250,6 @@ class PortfolioManager {
     startDynamicTitleRotation() {
         const titles = [
             'Laravel Developer',
-            'PHP Expert',
             'Full Stack Developer',
             'API Specialist',
             'Payment Integration Expert',
@@ -534,138 +535,315 @@ class PortfolioManager {
     }
 }
 
+const projectsData = [
+    
+    {
+        id: 'altair1',
+        categories: ['ecommerce', 'payment', 'dashboard'],
+        type: 'E-commerce Platform',
+        title: 'Altair Innovation - Automotive Parts',
+        shortDescription: 'Comprehensive automotive e-commerce platform specializing in air suspensions, wheels, and car parts with integrated Stripe payments, admin dashboard, and inventory management system.',
+        status: 'live',
+        liveUrl: null,
+        thumbnail: 'assets/projects/altair-landing.png',
+        description: 'Comprehensive automotive e-commerce platform specializing in air suspensions, wheels, and car parts. Features integrated Stripe payments, comprehensive admin dashboard, and advanced inventory management system for automotive enthusiasts.',
+        features: [
+            'Automotive parts catalog with detailed specifications',
+            'Stripe payment integration for secure transactions',
+            'Comprehensive admin dashboard for inventory management',
+            'Order management system with tracking',
+            'Product categorization (Air Suspensions, Wheels, etc.)',
+            'User account management and order history',
+            'Responsive design for mobile and desktop',
+            'Settings panel for Stripe API key management',
+            'Real-time inventory updates',
+            'Shopping cart with AJAX functionality',
+            'Customer notification system',
+            'Advanced search and filtering options'
+        ],
+        technologies: ['Laravel 10', 'JavaScript ES6', 'AJAX', 'Stripe API', 'MySQL 8', 'Bootstrap 5', 'jQuery', 'PHP 8+'],
+        imagesBasePath: 'assets/projects/altair/',
+        images: [
+            'altair-landing.png',
+            'altair-shop.png',
+            'altair-list.png',
+            'altair-dashboard.png',
+            'altair-table.png',
+            'altair-model.png',
+            'altair-add.png',
+            'altair-settings.png',
+            'altair-checkout.png',
+            'altair-login.png',
+            'altair-footer.png',
+            'altair-med.png'
+        ]
+    },
+    {
+        id: 'olx1',
+        categories: ['ecommerce', 'dashboard', 'api', 'frontend'],
+        type: 'Full-Stack Web Application',
+        title: 'Dynamic Car Marketplace',
+        shortDescription: 'Complete OLX-style platform with car listings, dealer management, dynamic admin panel, and fully customizable website content.',
+        status: 'live',
+        liveUrl: null,
+        thumbnail: 'assets/projects/olx/home.png',
+        description: 'A complete OLX-style platform built with Laravel featuring car listings, dealer management, powerful admin dashboard, universal filters, location-based search, and dynamic website customization.',
+        features: [
+            'Dynamic admin panel for full system control',
+            'Manage cars, brands, and models',
+            'CMS for blogs and content pages',
+            'Dealer and user management system',
+            'Universal filters and car search',
+            'Interactive dashboard with charts'
+        ],
+        technologies: ['Laravel', 'MySQL', 'Bootstrap', 'jQuery', 'AJAX', 'Chart.js'],
+        imagesBasePath: 'assets/projects/olx/',
+        images: [
+            'short.png',
+            'home-list.png',
+            'home.png',
+            'detail-car.png',
+            'cars-filter.png',
+            'blog-det.png',
+            'dashboard.png',
+            'blog-edit.png',
+            'brands.png',
+            'cars.png',
+            'cars-edit.png',
+            'gsetting.png',
+            'setting.png',
+            'footer.png'
+        ]
+    },
+    {
+        id: 'profastchemicals1',
+        categories: ['ecommerce', 'dashboard', 'api', 'frontend'],
+        type: 'Corporate Management Platform',
+        title: 'Profastchemicals – Pesticide Company Management',
+        shortDescription: 'Corporate management platform with public company profile, product catalog, contact management, and admin dashboard for dynamic content.',
+        status: 'live',
+        liveUrl: null,
+        thumbnail: 'assets/projects/profastchemicals/profastchemicals.com.png',
+        description: 'Complete corporate management platform for a pesticide manufacturing company, featuring a public company profile with product catalog, contact information, and a robust admin dashboard to manage products, customer queries, CMS pages, and website content dynamically.',
+        features: [
+            'Company profile management with dynamic content updates',
+            'Product catalog with advanced search and filtering options',
+            'Customer queries and contact management system',
+            'CMS pages and content sections management',
+            'Admin dashboard with comprehensive analytics',
+            'Dynamic website content management',
+            'User-friendly admin panel for non-technical staff',
+            'Responsive design for all devices',
+            'SEO optimized pages and content',
+            'Secure authentication and authorization system',
+            'Email notifications and alerts',
+            'Data export and reporting functionality'
+        ],
+        technologies: ['Laravel 10', 'MySQL 8', 'Blade Templates', 'Bootstrap 5', 'jQuery', 'AJAX', 'PHP 8+', 'HTML5/CSS3'],
+        imagesBasePath: 'assets/projects/profastchemicals/',
+        images: [
+            'profastchemicals.com.png',
+            'profastchemicals.com_about-us.png',
+            'profastchemicals.com_contact.png',
+            'profastchemicals.com_userServices.png'
+        ]
+    },
+    {
+        id: 'yachtbooking1',
+        categories: ['ecommerce', 'payment', 'dashboard', 'api'],
+        type: 'Luxury Yacht Booking Platform',
+        title: 'Yacht Booking & Management System',
+        shortDescription: 'Dynamic yacht booking platform with real-time availability, payment integration, and comprehensive admin/dashboard panels.',
+        status: 'live',
+        liveUrl: null,
+        thumbnail: 'assets/projects/yachtbooking/yachts.png',
+        description: 'A fully dynamic yacht booking platform allowing customers to book yachts, catering, and additional services for leisure trips. Includes a comprehensive admin dashboard to manage yachts, categories, amenities, services, payments, reports, and CMS pages, plus a complete booker dashboard.',
+        features: [
+            'Dynamic yacht booking system with real-time availability',
+            'Comprehensive yacht management with categories and amenities',
+            'Integrated catering and additional services booking',
+            'Stripe payment integration for secure transactions',
+            'Advanced admin dashboard with all management features',
+            'Complete booker panel with booking history',
+            'Payment gateway management and settings',
+            'Dynamic CMS and page builder functionality',
+            'Detailed reports and analytics system',
+            'Frontend page sections management',
+            'General settings and SMTP configuration',
+            'Invoice generation and payment tracking',
+            'User management and role-based permissions',
+            'Responsive design for all devices',
+            'Real-time notification system',
+            'Advanced search and filtering options'
+        ],
+        technologies: ['Laravel 10', 'MySQL 8', 'Bootstrap 5', 'Stripe API', 'JavaScript ES6', 'Dynamic CMS', 'Payment Integration', 'PHP 8+'],
+        imagesBasePath: 'assets/projects/yachtbooking/',
+        images: [
+            'yachts.png',
+            'adminlightdashboard.png',
+            'admindashboarddark.png',
+            'admindashbaordcards.png',
+            'userdashboard.png',
+            'yachtdetails.png',
+            'userbookingonfo.png',
+            'userpayment.png',
+            'adminpaymetnmethod.png',
+            'adminbookingrpt.png',
+            'adminmanagepages.png',
+            'adminmenuetabl.png',
+            'menucards.png',
+            'gallery.png',
+            'pagesection.png',
+            'setting.png',
+            'contact.png'
+        ]
+    },
+    {
+        id: 'beautyhub1',
+        categories: ['ecommerce', 'payment', 'dashboard'],
+        type: 'E-Commerce & POS System',
+        title: 'BeautyHub Store & POS Management',
+        shortDescription: 'End-to-end e-commerce and POS system for beauty stores with products, subscriptions, CMS, and reports.',
+        status: 'live',
+        liveUrl: null,
+        thumbnail: 'assets/projects/beautyhub/beautyhub.cslancer.com_.png',
+        description: 'An end-to-end e-commerce platform and POS system for beauty stores. Includes product, category, and subscription management, integrated payment gateways, and dynamic CMS modules such as FAQs, banners, and pages. Admin dashboard handles sales, stock, customers, and reports efficiently.',
+        features: [
+            'Complete e-commerce platform for beauty products',
+            'Integrated Point of Sale (POS) system',
+            'Product and category management with variants',
+            'Multiple payment gateways (Stripe, PayPal, KMoney)',
+            'Subscription management system',
+            'Dynamic CMS with FAQs, banners, and pages',
+            'Comprehensive admin dashboard',
+            'Sales and stock management',
+            'Customer management and profiles',
+            'Advanced reporting and analytics',
+            'Inventory tracking and alerts',
+            'Order management and processing',
+            'User roles and permissions',
+            'Responsive design for all devices',
+            'Real-time notifications',
+            'SEO-optimized product pages'
+        ],
+        technologies: ['Laravel 10', 'MySQL 8', 'Stripe API', 'jQuery', 'AJAX', 'Bootstrap 5', 'Payment Integration', 'CMS', 'PHP 8+'],
+        imagesBasePath: 'assets/projects/beautyhub/',
+        images: [
+            'beautyhub.cslancer.com_.png',
+            'beautyhub.cslancer.com_admin_dashboard.png',
+            'beautyhub.cslancer.com_admin_team.png',
+            'beautyhub.cslancer.com_shop.png',
+            'beautyhub.cslancer.com_product-details_5.png',
+            'beautyhub.cslancer.com_product-cart.png',
+            'prods.png',
+            'cat.png',
+            'inventory.png',
+            'orsers.png',
+            'membership.png',
+            'drfaq.png'
+        ]
+    },
+    {
+        id: 'jsc1',
+        categories: ['dashboard', 'api', 'frontend'],
+        type: 'Multi-Platform Sports Management',
+        title: 'Sports Community & Tournament Management',
+        shortDescription: 'Multi-platform sports community solution with player registration, tournament management, and React/Flutter clients.',
+        status: 'live',
+        liveUrl: null,
+        thumbnail: 'assets/projects/jsc/home.png',
+        description: 'A comprehensive multi-platform sports community solution where players register for games and tournaments, coaches manage teams, and admins oversee the complete sports ecosystem. Includes React admin dashboard and Flutter mobile app powered by Laravel REST APIs.',
+        features: [
+            'Multi-platform sports community management (Laravel + React + Flutter)',
+            'Player registration system for games and tournaments',
+            'Team management and coach assignment functionality',
+            'Tournament creation, management, and scheduling system',
+            'Comprehensive React admin dashboard for complete control',
+            'Flutter mobile app for players, coaches, and umpires',
+            'Laravel REST API backend with JWT authentication',
+            'Player statistics tracking and performance analytics',
+            'Media management and gallery system for match photos/videos',
+            'Real-time notifications across all platforms',
+            'Ground booking and timetable management',
+            'Match scheduling and automated fixture generation',
+            'Role-based access control (Admin, Coach, Player, Umpire)',
+            'Live match scoring and result management',
+            'Tournament brackets and leaderboard system',
+            'App banner and content management system',
+            'Advanced reporting and analytics dashboard',
+            'Real-time sync between mobile app and web dashboard'
+        ],
+        technologies: ['Laravel 10', 'React.js 18', 'Flutter 3.0', 'MySQL 8', 'JWT Auth', 'REST API', 'Redux', 'Material-UI', 'Dart', 'PHP 8+'],
+        imagesBasePath: 'assets/projects/jsc/',
+        images: [
+            'home.png',
+            'dashbaordtbls.png',
+            'gamesmanage.png',
+            'gallerycards.png',
+            'ordermodel.png'
+        ]
+    }
+];
+
+function renderProjects() {
+    const grid = document.querySelector('.projects-grid');
+    if (!grid) return;
+
+    grid.innerHTML = projectsData.map(project => {
+        const categoriesAttr = (project.categories || []).join(' ');
+        const features = (project.features || []).slice(0, 6);
+        const tech = (project.technologies || []).slice(0, 6);
+        const statusClass = project.status === 'live' ? 'status-live' : 'status-private';
+        const statusLabel = project.status === 'live' ? 'Live' : 'Private';
+
+        return `
+            <div class="project-card" data-category="${categoriesAttr}">
+                <div class="project-image">
+                    <div class="project-gallery">
+                        <img src="${project.thumbnail}" alt="${project.title}" loading="lazy">
+                        <div class="gallery-overlay">
+                            <button class="gallery-btn" onclick="openGallery('${project.id}')">
+                                <i class="fas fa-images"></i>
+                                View Gallery
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-status">
+                        <span class="${statusClass}">${statusLabel}</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-category">${project.type}</div>
+                    <h3>${project.title}</h3>
+                    <p>${project.shortDescription}</p>
+                    <div class="project-features">
+                        ${features.map(f => `<span><i class=\"fas fa-check\"></i> ${f}</span>`).join('')}
+                    </div>
+                    <div class="project-tech">
+                        ${tech.map(t => `<span>${t}</span>`).join('')}
+                    </div>
+                    <div class="project-links">
+                        <button class="project-link" data-tooltip="View Details" onclick="openProjectModal('${project.id}')">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                        ${project.liveUrl ? `
+                        <a class="project-link" href="${project.liveUrl}" target="_blank" rel="noopener" data-tooltip="View Live Project">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        ` : ''}
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
 // Project modal functions (called from HTML)
 function openProjectModal(projectId) {
-    const portfolio = window.portfolioManager;
     const modal = document.getElementById('projectModal');
     const modalTitle = document.getElementById('modalTitle');
     const modalBody = document.getElementById('modalBody');
-    
-    // Project data (you can expand this with more details)
-    const projectData = {
-        'altair1': {
-            title: 'Altair Innovation - Automotive Parts E-commerce',
-            description: 'Comprehensive automotive e-commerce platform specializing in air suspensions, wheels, and car parts. Features integrated Stripe payments, comprehensive admin dashboard, and advanced inventory management system for automotive enthusiasts.',
-            features: [
-                'Automotive parts catalog with detailed specifications',
-                'Stripe payment integration for secure transactions',
-                'Comprehensive admin dashboard for inventory management',
-                'Order management system with tracking',
-                'Product categorization (Air Suspensions, Wheels, etc.)',
-                'User account management and order history',
-                'Responsive design for mobile and desktop',
-                'Settings panel for Stripe API key management',
-                'Real-time inventory updates',
-                'Shopping cart with AJAX functionality',
-                'Customer notification system',
-                'Advanced search and filtering options'
-            ],
-            technologies: ['Laravel 10', 'JavaScript ES6', 'AJAX', 'Stripe API', 'MySQL 8', 'Bootstrap 5', 'jQuery', 'PHP 8+'],
-            challenges: 'Integrating multiple payment methods, managing complex automotive parts inventory, implementing real-time stock updates, and creating an intuitive admin interface for non-technical users.',
-            results: 'Successfully launched automotive e-commerce platform serving customers in London area, processing secure payments and managing extensive car parts inventory with excellent user experience.'
-        },
-        'profastchemicals1': {
-            title: 'AgroChem - Pesticide Company Management Platform',
-            description: 'Complete corporate management platform for a pesticide manufacturing company, featuring a public company profile with product catalog, contact information, and a robust admin dashboard to manage products, customer queries, CMS pages, and website content dynamically.',
-            features: [
-                'Company profile management with dynamic content updates',
-                'Product catalog with advanced search and filtering options',
-                'Customer queries and contact management system',
-                'CMS pages and content sections management',
-                'Admin dashboard with comprehensive analytics',
-                'Dynamic website content management',
-                'User-friendly admin panel for non-technical staff',
-                'Responsive design for all devices',
-                'SEO optimized pages and content',
-                'Secure authentication and authorization system',
-                'Email notifications and alerts',
-                'Data export and reporting functionality'
-            ],
-            technologies: ['Laravel 10', 'MySQL 8', 'Blade Templates', 'Bootstrap 5', 'jQuery', 'AJAX', 'PHP 8+', 'HTML5/CSS3'],
-            challenges: 'Creating a comprehensive corporate management system that balances public-facing content with powerful admin functionality, implementing intuitive content management for non-technical users, and ensuring seamless integration between frontend presentation and backend management.',
-            results: 'Successfully delivered a complete corporate platform that empowers the pesticide company to manage their online presence effectively, resulting in improved customer engagement and streamlined internal operations.'
-        },
-        'yachtbooking1': {
-            title: 'Yacht Booking & Management System',
-            description: 'A fully dynamic yacht booking platform allowing customers to book yachts, catering, and additional services for leisure trips. Includes a comprehensive admin dashboard to manage yachts, categories, amenities, services, payments, reports, and CMS pages. Features a complete booker dashboard displaying bookings, payments, and invoices.',
-            features: [
-                'Dynamic yacht booking system with real-time availability',
-                'Comprehensive yacht management with categories and amenities',
-                'Integrated catering and additional services booking',
-                'Stripe payment integration for secure transactions',
-                'Advanced admin dashboard with all management features',
-                'Complete booker panel with booking history',
-                'Payment gateway management and settings',
-                'Dynamic CMS and page builder functionality',
-                'Detailed reports and analytics system',
-                'Frontend page sections management',
-                'General settings and SMTP configuration',
-                'Invoice generation and payment tracking',
-                'User management and role-based permissions',
-                'Responsive design for all devices',
-                'Real-time notification system',
-                'Advanced search and filtering options'
-            ],
-            technologies: ['Laravel 10', 'MySQL 8', 'Bootstrap 5', 'Stripe API', 'JavaScript ES6', 'Dynamic CMS', 'Payment Integration', 'PHP 8+'],
-            challenges: 'Building a complex booking system with real-time availability, integrating multiple payment gateways, creating a comprehensive admin dashboard that manages yachts, payments, and CMS content, while ensuring seamless user experience for both customers and administrators.',
-            results: 'Successfully delivered a complete luxury yacht booking platform that streamlines the entire booking process, from yacht selection to payment processing, with comprehensive management tools for administrators and an intuitive booking experience for customers.'
-        },
-        'beautyhub1': {
-            title: 'BeautyHub Store & POS Management System',
-            description: 'An end-to-end e-commerce platform and POS system for beauty stores. Includes product, category, and subscription management, integrated payment gateways, and dynamic CMS modules such as FAQs, banners, and pages. Admin dashboard handles sales, stock, customers, and reports efficiently.',
-            features: [
-                'Complete e-commerce platform for beauty products',
-                'Integrated Point of Sale (POS) system',
-                'Product and category management with variants',
-                'Multiple payment gateways (Stripe, PayPal, KMoney)',
-                'Subscription management system',
-                'Dynamic CMS with FAQs, banners, and pages',
-                'Comprehensive admin dashboard',
-                'Sales and stock management',
-                'Customer management and profiles',
-                'Advanced reporting and analytics',
-                'Inventory tracking and alerts',
-                'Order management and processing',
-                'User roles and permissions',
-                'Responsive design for all devices',
-                'Real-time notifications',
-                'SEO-optimized product pages'
-            ],
-            technologies: ['Laravel 10', 'MySQL 8', 'Stripe API', 'jQuery', 'AJAX', 'Bootstrap 5', 'Payment Integration', 'CMS', 'PHP 8+'],
-            challenges: 'Developing a dual-purpose system that functions both as an e-commerce platform and POS system, integrating multiple payment gateways including local payment methods, creating a flexible CMS for dynamic content management, and ensuring seamless inventory synchronization between online and offline sales.',
-            results: 'Successfully launched a comprehensive beauty store management system that streamlined both online sales and in-store operations, resulting in improved inventory management, increased sales efficiency, and enhanced customer experience across all channels.'
-        },
-        'jsc1': {
-            title: 'Sports Community & Tournament Management Platform',
-            description: 'A comprehensive multi-platform sports community solution where players register for games and tournaments, coaches manage teams, and admins oversee complete sports ecosystem. Features React admin dashboard for comprehensive management and Flutter mobile app for players, all powered by Laravel REST APIs with real-time synchronization across platforms.',
-            features: [
-                'Multi-platform sports community management (Laravel + React + Flutter)',
-                'Player registration system for games and tournaments',
-                'Team management and coach assignment functionality',
-                'Tournament creation, management, and scheduling system',
-                'Comprehensive React admin dashboard for complete control',
-                'Flutter mobile app for players, coaches, and umpires',
-                'Laravel REST API backend with JWT authentication',
-                'Player statistics tracking and performance analytics',
-                'Media management and gallery system for match photos/videos',
-                'Real-time notifications across all platforms',
-                'Ground booking and time table management',
-                'Match scheduling and automated fixture generation',
-                'Role-based access control (Admin, Coach, Player, Umpire)',
-                'Live match scoring and result management',
-                'Tournament brackets and leaderboard system',
-                'App banner and content management system',
-                'Advanced reporting and analytics dashboard',
-                'Real-time sync between mobile app and web dashboard'
-            ],
-            technologies: ['Laravel 10', 'React.js 18', 'Flutter 3.0', 'MySQL 8', 'JWT Auth', 'REST API', 'Redux', 'Material-UI', 'Dart', 'PHP 8+'],
-            challenges: 'Building a complex multi-platform ecosystem that seamlessly integrates Laravel backend with React dashboard and Flutter mobile app, implementing real-time synchronization across all platforms, managing complex sports data relationships (players, teams, tournaments, matches), ensuring optimal performance for mobile users, and creating intuitive interfaces for different user roles with varying technical expertise.',
-            results: 'Successfully delivered a complete sports community management ecosystem that revolutionized how sports tournaments are organized and managed. The platform enabled efficient player registration, streamlined tournament management, improved communication between stakeholders, and provided comprehensive analytics for sports administrators, resulting in enhanced user engagement and operational efficiency.'
-        }
-        // Add more project data as needed
-    };
-
-    const project = projectData[projectId];
+    const project = projectsData.find(p => p.id === projectId);
     if (!project) return;
 
     modalTitle.textContent = project.title;
@@ -675,19 +853,17 @@ function openProjectModal(projectId) {
             
             <h4>Key Features:</h4>
             <ul class="feature-list">
-                ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+                ${(project.features || []).map(feature => `<li>${feature}</li>`).join('')}
             </ul>
             
             <h4>Technologies Used:</h4>
             <div class="tech-tags">
-                ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                ${(project.technologies || []).map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
             </div>
-            
-            <h4>Challenges & Solutions:</h4>
-            <p>${project.challenges}</p>
-            
-            <h4>Results & Impact:</h4>
-            <p>${project.results}</p>
+            ${project.liveUrl ? `
+            <h4>Live Demo:</h4>
+            <p><a href="${project.liveUrl}" target="_blank" rel="noopener" class="btn btn-primary">View Live Project</a></p>
+            ` : ''}
         </div>
     `;
     
@@ -709,289 +885,14 @@ function openGallery(projectId) {
     const currentSlideSpan = document.getElementById('currentSlide');
     const totalSlidesSpan = document.getElementById('totalSlides');
     const galleryDots = document.getElementById('galleryDots');
-    
-    // Sample gallery images (replace with actual project images)
-    const galleries = {
-        'altair1': [
-            {
-                src: 'assets/projects/altair-landing.png',
-                alt: 'Altair Innovation - Homepage'
-            },
-            {
-                src: 'assets/projects/altair-shop.png',
-                alt: 'Car Parts Shop Page'
-            },
-            {
-                src: 'assets/projects/altair-list.png',
-                alt: 'Product Listing Page'
-            },
-            {
-                src: 'assets/projects/altair-dashboard.png',
-                alt: 'Admin Dashboard'
-            },
-            {
-                src: 'assets/projects/altair-table.png',
-                alt: 'Admin Data Table'
-            },
-            {
-                src: 'assets/projects/altair-model.png',
-                alt: 'Product Management Modal'
-            },
-            {
-                src: 'assets/projects/altair-add.png',
-                alt: 'Add New Product Form'
-            },
-            {
-                src: 'assets/projects/altair-settings.png',
-                alt: 'Settings & Configuration'
-            },
-            {
-                src: 'assets/projects/altair-checkout.png',
-                alt: 'Checkout Process'
-            },
-            {
-                src: 'assets/projects/altair-login.png',
-                alt: 'Admin Login Page'
-            },
-            {
-                src: 'assets/projects/altair-footer.png',
-                alt: 'Footer Section'
-            },
-            {
-                src: 'assets/projects/altair-med.png',
-                alt: 'Product Detail View'
-            }
-        ],
-        'olx1': [
-            {
-                src: 'assets/projects/olx/short.png',
-                alt: 'Altair Innovation - Homepage'
-            },
-            {
-                src: 'assets/projects/olx/home-list.png',
-                alt: 'Car Parts Shop Page'
-            },
-            {
-                src: 'assets/projects/olx/home.png',
-                alt: 'Product Listing Page'
-            },
-            {
-                src: 'assets/projects/olx/detail-car.png',
-                alt: 'Admin Dashboard'
-            },
-            {
-                src: 'assets/projects/olx/cars-filter.png',
-                alt: 'Admin Data Table'
-            },
-            {
-                src: 'assets/projects/olx/blog-det.png',
-                alt: 'Product Management Modal'
-            },
-            {
-                src: 'assets/projects/olx/dashboard.png',
-                alt: 'Add New Product Form'
-            },
-            {
-                src: 'assets/projects/olx/short.png',
-                alt: 'Settings & Configuration'
-            },
-            {
-                src: 'assets/projects/olx/blog-edit.png',
-                alt: 'Checkout Process'
-            },
-            {
-                src: 'assets/projects/olx/brands.png',
-                alt: 'Admin Login Page'
-            },
-            {
-                src: 'assets/projects/olx/cars.png',
-                alt: 'Footer Section'
-            },
-            {
-                src: 'assets/projects/olx/cars-edit.png',
-                alt: 'Product Detail View'
-            },
-             {
-                src: 'assets/projects/olx/cars-filter.png',
-                alt: 'Product Detail View'
-            },
-             {
-                src: 'assets/projects/olx/gsetting.png',
-                alt: 'Product Detail View'
-            },
-             {
-                src: 'assets/projects/olx/setting.png',
-                alt: 'Product Detail View'
-            },
-             {
-                src: 'assets/projects/olx/footer.png',
-                alt: 'Product Detail View'
-            }
-        ],
-        'profastchemicals1': [
-            {
-                src: 'assets/projects/profastchemicals/profastchemicals.com.png',
-                alt: 'AgroChem - Company Homepage'
-            },
-            {
-                src: 'assets/projects/profastchemicals/profastchemicals.com_about-us.png',
-                alt: 'About Us - Company Information'
-            },
-            {
-                src: 'assets/projects/profastchemicals/profastchemicals.com_contact.png',
-                alt: 'Contact Page - Customer Queries'
-            },
-            {
-                src: 'assets/projects/profastchemicals/profastchemicals.com_userServices.png',
-                alt: 'Services & Product Catalog'
-            }
-        ],
-        'yachtbooking1': [
-            {
-                src: 'assets/projects/yachtbooking/yachts.png',
-                alt: 'Yacht Booking - Yacht Listings'
-            },
-            {
-                src: 'assets/projects/yachtbooking/adminlightdashboard.png',
-                alt: 'Admin Dashboard - Light Mode'
-            },
-            {
-                src: 'assets/projects/yachtbooking/admindashboarddark.png',
-                alt: 'Admin Dashboard - Dark Mode'
-            },
-            {
-                src: 'assets/projects/yachtbooking/admindashbaordcards.png',
-                alt: 'Admin Dashboard Cards & Statistics'
-            },
-            {
-                src: 'assets/projects/yachtbooking/userdashboard.png',
-                alt: 'User Booking Dashboard'
-            },
-            {
-                src: 'assets/projects/yachtbooking/yachtdetails.png',
-                alt: 'Yacht Details & Booking Page'
-            },
-            {
-                src: 'assets/projects/yachtbooking/userbookingonfo.png',
-                alt: 'User Booking Information'
-            },
-            {
-                src: 'assets/projects/yachtbooking/userpayment.png',
-                alt: 'Payment Processing Page'
-            },
-            {
-                src: 'assets/projects/yachtbooking/adminpaymetnmethod.png',
-                alt: 'Admin Payment Methods Management'
-            },
-            {
-                src: 'assets/projects/yachtbooking/adminbookingrpt.png',
-                alt: 'Admin Booking Reports'
-            },
-            {
-                src: 'assets/projects/yachtbooking/adminmanagepages.png',
-                alt: 'Admin Pages Management'
-            },
-            {
-                src: 'assets/projects/yachtbooking/adminmenuetabl.png',
-                alt: 'Admin Menu & Table Management'
-            },
-            {
-                src: 'assets/projects/yachtbooking/menucards.png',
-                alt: 'Menu Cards & Services'
-            },
-            {
-                src: 'assets/projects/yachtbooking/gallery.png',
-                alt: 'Gallery & Image Management'
-            },
-            {
-                src: 'assets/projects/yachtbooking/pagesection.png',
-                alt: 'Page Sections & CMS'
-            },
-            {
-                src: 'assets/projects/yachtbooking/setting.png',
-                alt: 'System Settings & Configuration'
-            },
-            {
-                src: 'assets/projects/yachtbooking/contact.png',
-                alt: 'Contact Management'
-            }
-        ],
-        'beautyhub1': [
-            {
-                src: 'assets/projects/beautyhub/beautyhub.cslancer.com_.png',
-                alt: 'BeautyHub - Homepage & Store Front'
-            },
-            {
-                src: 'assets/projects/beautyhub/beautyhub.cslancer.com_admin_dashboard.png',
-                alt: 'Admin Dashboard - Main Overview'
-            },
-            {
-                src: 'assets/projects/beautyhub/beautyhub.cslancer.com_admin_team.png',
-                alt: 'Admin Team Management'
-            },
-            {
-                src: 'assets/projects/beautyhub/beautyhub.cslancer.com_shop.png',
-                alt: 'Shop & Product Catalog'
-            },
-            {
-                src: 'assets/projects/beautyhub/beautyhub.cslancer.com_product-details_5.png',
-                alt: 'Product Details Page'
-            },
-            {
-                src: 'assets/projects/beautyhub/beautyhub.cslancer.com_product-cart.png',
-                alt: 'Shopping Cart & Checkout'
-            },
-            {
-                src: 'assets/projects/beautyhub/prods.png',
-                alt: 'Product Management Panel'
-            },
-            {
-                src: 'assets/projects/beautyhub/cat.png',
-                alt: 'Category Management System'
-            },
-            {
-                src: 'assets/projects/beautyhub/inventory.png',
-                alt: 'Inventory Tracking & Management'
-            },
-            {
-                src: 'assets/projects/beautyhub/orsers.png',
-                alt: 'Orders Management & Processing'
-            },
-            {
-                src: 'assets/projects/beautyhub/membership.png',
-                alt: 'Membership & Subscription System'
-            },
-            {
-                src: 'assets/projects/beautyhub/drfaq.png',
-                alt: 'FAQ Management & CMS'
-            }
-        ],
-        'jsc1': [
-            {
-                src: 'assets/projects/jsc/home.png',
-                alt: 'Sports Community - Mobile App Home Screen'
-            },
-            {
-                src: 'assets/projects/jsc/dashbaordtbls.png',
-                alt: 'React Admin Dashboard - Data Tables'
-            },
-            {
-                src: 'assets/projects/jsc/gamesmanage.png',
-                alt: 'Games & Tournament Management Panel'
-            },
-            {
-                src: 'assets/projects/jsc/gallerycards.png',
-                alt: 'Media Gallery & Sports Cards Management'
-            },
-            {
-                src: 'assets/projects/jsc/ordermodel.png',
-                alt: 'Registration & Order Management Modal'
-            }
-        ]
-        
-    };
-    
-    galleryImages = galleries[projectId] || [];
+    const project = projectsData.find(p => p.id === projectId);
+    const basePath = project && project.imagesBasePath ? project.imagesBasePath : '';
+    const imageFiles = project && Array.isArray(project.images) ? project.images : [];
+
+    galleryImages = imageFiles.map(file => ({
+        src: `${basePath}${file}`,
+        alt: project ? project.title : 'Project Gallery'
+    }));
     currentSlideIndex = 0;
     
     if (galleryImages.length === 0) return;
@@ -1196,6 +1097,7 @@ document.head.appendChild(styleSheet);
 
 // Initialize portfolio manager when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    renderProjects();
     window.portfolioManager = new PortfolioManager();
     
     // Add some CSS for initial state of animated elements
